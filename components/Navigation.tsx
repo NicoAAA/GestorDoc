@@ -166,22 +166,24 @@ export const Navigation: React.FC<NavigationProps> = ({
         </div>
       </motion.nav>
 
-      {/* Mobile Bottom Tab Bar */}
-      <div className={`md:hidden fixed bottom-0 left-0 right-0 h-20 pb-4 px-6 flex items-center justify-between border-t backdrop-blur-[40px] saturate-150 z-50 transition-colors duration-500 ${glassStyles}`}>
-        {navItems.slice(0, 5).map((item) => {
-            const isActive = activeTab === item.id;
-            const Icon = item.icon;
-            return (
-                <button
-                    key={item.id}
-                    onClick={() => setActiveTab(item.id)}
-                    className={`flex flex-col items-center justify-center space-y-1 transition-all duration-300 ${isActive ? 'text-blue-500 scale-110 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]' : 'opacity-70'}`}
-                >
-                    <Icon size={24} strokeWidth={isActive ? 2.5 : 2} />
-                    <span className="text-[10px] font-medium">{item.label}</span>
-                </button>
-            )
-        })}
+      {/* Mobile Bottom Tab Bar - Centered Grid Layout */}
+      <div className={`md:hidden fixed bottom-0 left-0 right-0 h-20 pb-4 border-t backdrop-blur-[40px] saturate-150 z-50 transition-colors duration-500 ${glassStyles}`}>
+        <div className="h-full max-w-lg mx-auto grid grid-cols-5 items-center">
+            {navItems.slice(0, 5).map((item) => {
+                const isActive = activeTab === item.id;
+                const Icon = item.icon;
+                return (
+                    <button
+                        key={item.id}
+                        onClick={() => setActiveTab(item.id)}
+                        className={`flex flex-col items-center justify-center space-y-1 transition-all duration-300 ${isActive ? 'text-blue-500 scale-110 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]' : 'opacity-70'}`}
+                    >
+                        <Icon size={24} strokeWidth={isActive ? 2.5 : 2} />
+                        <span className="text-[10px] font-medium">{item.label}</span>
+                    </button>
+                )
+            })}
+        </div>
       </div>
     </>
   );

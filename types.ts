@@ -5,6 +5,7 @@ export interface FileItem {
   size?: string;
   date: string;
   isFavorite?: boolean;
+  parentId?: string | null;
 }
 
 export interface NavigationItem {
@@ -15,3 +16,5 @@ export interface NavigationItem {
 }
 
 export type Theme = 'light' | 'dark';
+
+export type ViewMode = 'grid' | 'list';
