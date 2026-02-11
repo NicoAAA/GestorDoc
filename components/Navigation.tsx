@@ -78,7 +78,7 @@ export const Navigation: React.FC<NavigationProps> = ({
                   transition={{ duration: 0.2 }}
                   className={`font-semibold text-lg tracking-tight whitespace-nowrap pl-2 ${isDarkMode ? 'text-white' : 'text-black'}`}
                 >
-                  Cupertino
+                  T3 TEXTILES
                 </motion.span>
               )}
             </AnimatePresence>

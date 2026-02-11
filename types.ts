@@ -6,6 +6,7 @@ export interface FileItem {
   date: string;
   isFavorite?: boolean;
   parentId?: string | null;
+  isTrashed?: boolean;
 }
 
 export interface NavigationItem {
